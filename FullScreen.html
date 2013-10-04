@@ -1,0 +1,37 @@
+
+<!DOCTYPE html>
+
+<html>
+<head>  
+<script>
+
+function launchFullscreen(element) {
+if(element.requestFullScreen) {
+element.requestFullScreen();
+} else if(element.mozRequestFullScreen) {
+element.mozRequestFullScreen();
+} else if(element.webkitRequestFullScreen) {
+element.webkitRequestFullScreen();
+}
+}
+
+function cancelFullscreen() {
+if(document.cancelFullScreen) {
+document.cancelFullScreen();
+} else if(document.mozCancelFullScreen) {
+document.mozCancelFullScreen();
+} else if(document.webkitCancelFullScreen) {
+document.webkitCancelFullScreen();
+}
+}
+
+</script>
+</head>
+<body>
+
+<button onclick="launchFullscreen(document.documentElement);">Launch Fullscreen</button>
+
+<button onclick="cancelFullscreen();">Hide Fullscreen</button>
+
+</body>
+</html>
